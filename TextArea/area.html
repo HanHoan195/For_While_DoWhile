@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXTAREA</title>
+</head>
+
+<body>
+    <form action="" name="f">
+        <h2>Type anything slowly</h2>
+        <textarea name="text" id="" cols="30" rows="10" onkeydown="onkey()"></textarea>
+    </form>
+   
+    <script>
+        let face = new Array();
+        let textView = "";
+            face[1]="C";
+            face[2]="O";
+            face[3]="D";
+            face[4]="E";
+            face[5]="G";
+            face[6]="Y";
+            face[7]="M";
+            face[8]=" ";
+            face[9]="H";
+            face[10]="U";
+            face[11]="Ế";
+            face[12]="!";
+        function onkey() {
+            let text = document.f.text.value;
+            if (text.length > 0) {
+                for (let i = 1; i <= text.length; i++) {
+                    textView = textView + face[i];
+                    if (i == 12) {
+                        document.f.text.value ="";
+                        textView = "";
+                    }
+                }
+            }
+            document.f.text.value = textView;
+            textView ="";
+        }
+
+    </script>
+</body>
+
+</html>
